@@ -7,7 +7,11 @@
     <title>MrsKate Tattoo</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic-icons.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
     <style>
         .galeria {
           display: flex;
@@ -23,6 +27,18 @@
           height: auto;
           max-width: 100%;
         }
+
+        .galeria a {
+          width: calc(50% - 15px); /* 50% width for each image with 5px gap */
+          height: auto;
+          max-width: 100%;
+        }
+
+        .galeria a img{
+          width: 100%; /* 50% width for each image with 5px gap */
+          height: auto;
+          max-width: 100%;
+        }
     
         @media (min-width: 768px) {
           .gallery {
@@ -35,6 +51,32 @@
             min-width: 100%;
             margin: 15px;
         }
+
+        .image-overlay {
+        position: absolute;
+        
+        left: 42%; /* pozycja left */
+        width: 6%; /* szerokość obrazka nakładanego */
+        bottom: 2%;
+        z-index: 1; /* warstwa nakładania */
+        }
+
+        .image-overlay2 {
+        position: absolute;
+        
+        right: 42%; /* pozycja left */
+        width: 6%; /* szerokość obrazka nakładanego */
+        bottom: 2%;
+        z-index: 1; /* warstwa nakładania */
+        }
+
+        .stopa {
+        position: relative; /* Establish positioning context */
+        display: inline-block; /* Ensure container wraps around content */
+        }     
+       
+
+
     </style>
 
 
@@ -62,22 +104,59 @@
                         <!--<p style="width: 100%;"><br>Masz pomysły na tatuaż?<br><br>Chętnie Ci go wykonam.<br><br></p>\-->
                         
                         <div class="galeria">
-                            <img src="assets/img/1.jpg" alt="listki">
-                            <img src="assets/img/2.jpg" alt="listki2">
-                            <img src="assets/img/3.jpg" alt="dzwoneczki">
-                            <img src="assets/img/4.jpg" alt="swieczka">
+                            <a href="assets/img/1.jpg" data-fancybox="gallery" data-caption="Listki">
+                                <img src="assets/img/1.jpg" />
+                              </a>
+                              
+                              <a href="assets/img/2.jpg" data-fancybox="gallery" data-caption="Listki">
+                                <img src="assets/img/2.jpg" />
+                              </a>
+                            
+                              <a href="assets/img/3.jpg" data-fancybox="gallery" data-caption="Dzwoneczki">
+                                <img src="assets/img/3.jpg" />
+                              </a>
+
+                              <a href="assets/img/4.jpg" data-fancybox="gallery" data-caption="Świeczka">
+                                <img src="assets/img/4.jpg" />
+                              </a>
+                            
                         
                             <div style="width: 100%;"><p>Stwórz swoje własne arcydzieło.</p></div>
 
-                            <img src="assets/img/5.jpg" alt="klucz">
-                            <img src="assets/img/6.jpg" alt="skorpion">
-                            <img src="assets/img/7.jpg" alt="ak">
-                            <img src="assets/img/8.jpg" alt="ak2">
+                            <a href="assets/img/5.jpg" data-fancybox="gallery" data-caption="Klucz">
+                                <img src="assets/img/5.jpg" />
+                              </a>
+                            
+                              <a href="assets/img/6.jpg" data-fancybox="gallery" data-caption="Skropion">
+                                <img src="assets/img/6.jpg" />
+                              </a>
+
+                              <a href="assets/img/7.jpg" data-fancybox="gallery" data-caption="AK-47">
+                                <img src="assets/img/7.jpg" />
+                              </a>
+
+                              <a href="assets/img/8.jpg" data-fancybox="gallery" data-caption="AK-47">
+                                <img src="assets/img/8.jpg" />
+                              </a>
+
                             <div style="width: 100%;"><p>Każdy projekt jest wyjątkowy jak TY!</p></div>
-                            <img src="assets/img/9.jpg" alt="roza">
-                            <img src="assets/img/10.jpg" alt="kostka">
-                            <img src="assets/img/11.jpg" alt="smok">
-                            <img src="assets/img/12.jpg" alt="swinia">
+
+                            <a href="assets/img/9.jpg" data-fancybox="gallery" data-caption="Róża">
+                                <img src="assets/img/9.jpg" />
+                              </a>
+
+                              <a href="assets/img/10.jpg" data-fancybox="gallery" data-caption="Bransoletka piórko">
+                                <img src="assets/img/10.jpg" />
+                              </a>
+
+                              <a href="assets/img/11.jpg" data-fancybox="gallery" data-caption="Smok">
+                                <img src="assets/img/11.jpg" />
+                              </a>
+
+                              <a href="assets/img/12.jpg" data-fancybox="gallery" data-caption="Świnia">
+                                <img src="assets/img/12.jpg" />
+                              </a>
+                           
 
 
 
@@ -96,17 +175,31 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 d-flex flex-row">
-                        <p style="width: 100%;margin-right: 5px;margin-left: 5px;height: 100%;"><br>Zapraszam do kontaktu </p>
+                        <div style="width: 100%;margin: 15px;"><p>Zapraszam do kontaktu:</p></div>
+                        
                     </div>
+                    <div style="width: 100%; margin-bottom: 15px;"><p>kontakt@mrskatetatto.art</p></div>
+                    
                 </div>
             </div>
             <picture id="bok_p"><img src="assets/img/3tlo_prawe-03.jpg" style="width: 0%;"></picture>
         </div>
     </div>
-    <footer class="text-center">
+    <footer class="text-center stopa">
         <picture><img src="assets/img/stopka%20correct-04.jpg" style="width: 100%;"></picture>
+        <a href="https://www.instagram.com/mrskate.tattoo"><img class="image-overlay" src="assets/img/icons8-instagram.svg"></a>
+        <a href="https://www.tiktok.com/@mrskate.tattoo"><img class="image-overlay2" src="assets/img/icons8-tiktok.svg"></a>
+        
     </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+        });
+    </script>
+
 </body>
 
 </html>
